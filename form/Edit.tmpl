@@ -1,0 +1,13 @@
+{{ define "Edit" }}
+  {{ template "Header" }}
+    {{ template "Menu" }} 
+   <h2>Edit Berat Badan</h2>  
+    <form method="POST" action="update">
+      <input type="hidden" name="id" value="{{ .Id }}" />
+        <label> Tanggal </label><input type="date" name="tanggal" value="{{ .Tanggal }}" /><br />
+        <label> Min </label><input type="number" name="min" value="{{ .Min }}"/><br />
+        <label> Max </label><input type="number" name="max" value="{{ .Max }}" /><br />
+      <input type="submit" value="Save user" />
+    </form><br />    
+  {{ template "Footer" }}
+{{ end }}

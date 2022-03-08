@@ -1,0 +1,12 @@
+{{ define "New" }}
+  {{ template "Header" }}
+    {{ template "Menu" }} 
+   <h2>Masukkan Data Berat Badan</h2>  
+    <form method="POST" action="insert">
+      <label> Tanggal </label><input type="date" name="tanggal" /><br />
+      <label> Min </label><input type="number" name="min" /><br />
+	  <label> Max </label><input type="number" name="max" /><br />
+      <input type="submit" value="Save berat badan" />
+    </form>
+  {{ template "Footer" }}
+{{ end }}

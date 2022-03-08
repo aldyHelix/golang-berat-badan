@@ -1,0 +1,28 @@
+{{ define "Show" }}
+  {{ template "Header" }}
+    {{ template "Menu"  }}
+	</p><a href="/edit?id={{ .Id }}">Edit</a></p>
+	<table border="1">
+		<thead>
+		<tr>
+			<td>Tanggal</td>
+			<td>{{ .Tanggal }}</td>
+		</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Max</td>
+				<td>{{ .Max }}</td>
+			</tr>
+			<tr>
+				<td>Min</td>
+				<td>{{ .Min }}</td>
+			</tr>
+			<tr>
+				<td>Perbedaan</td>
+				<td>{{ .Perbedaan }}</td>
+			</tr>
+		<tbody>
+	</table>
+  {{ template "Footer" }}
+{{ end }}

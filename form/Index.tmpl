@@ -1,0 +1,38 @@
+{{ define "Index" }}
+  {{ template "Header" }}
+    {{ template "Menu"  }}
+    <h2> Berat Badan Harian </h2>
+    <table border="1">
+      <thead>
+      <tr>
+        <td>Tanggal</td>
+        <td>Min</td>
+        <td>Max</td>
+        <td>Perbedaan</td>
+        <td>View</td>
+        <td>Edit</td>
+        <td>Delete</td>
+      </tr>
+       </thead>
+       <tbody>
+    {{ range .ListBerat}}
+      <tr>
+        <td>{{ .Tanggal }}</td>
+        <td> {{ .Min }} </td>
+        <td>{{ .Max }} </td>
+        <td>{{ .Perbedaan }}</td> 
+        <td><a href="/show?id={{ .Id }}">View</a></td>
+        <td><a href="/edit?id={{ .Id }}">Edit</a></td>
+        <td><a href="/delete?id={{ .Id }}">Delete</a><td>
+      </tr>
+    {{ end }}
+      <tr>
+        <td>Rata - Rata</td>
+        <td> {{ .AverageMin }} </td>
+        <td>{{ .AverageMax }} </td>
+        <td>{{ .AveragePerbedaan }}</td> 
+      </tr>
+       </tbody>
+    </table>
+  {{ template "Footer" }}
+{{ end }}
